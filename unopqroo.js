@@ -1,3 +1,5 @@
+
+const rl = require("readline-sync");
 //juego uno
 var deck = [];
 var colors = ["Yellow", "Blue", "Green", "Red"];
@@ -41,4 +43,25 @@ for (var cColor = 0; cColor < colors.length; cColor++) {
 //console.log(JSON.stringify(deck));
 
 const players = rl.question("cuantos jugadores seran?",{})
-console.log(players);     // npm i  <modulo>  o npm install <modulo> sirve para iniziaclizar un proyecto de node 
+const totalCards = players * 7;
+// Repatir 7 cartas por jugador
+// Recorro el total de tarjetas ( total de tarjetas= tarjetas/7 * jugador)  
+// un arreglo x jugador  
+//  Diefrencia  de arreglo: uno se accede mediante posiciones y el objeto mediante nombre
+var  cardsPlayers = {};
+
+
+for(var cTCards = 0; cTCards < 7; cTCards++) {
+
+for(var cPlayers = 0; cPlayers < players; cPlayers++){
+ 
+    if (!cardsPlayers[ "Player_"+cPlayers ] ) {
+        cardsPlayers[ "Player_"+cPlayers ] = [];
+    }
+    
+    cardsPlayers[ "Player_"+cPlayers ]. push(deck[cTCards]);
+    
+}
+
+}
+console.log (cardsPlayers);
