@@ -68,13 +68,23 @@ function cardValidation(card) {
     } else {console.log("no es igual")}
 }
 
-for(const player in cardsPlayers) {
-    console.log(cardsPlayers[player])
+//for(const player in cardsPlayers) {
+    //console.log(cardsPlayers[player])
     // Primer player ponga una carta
     // PASO 1: ver mis cartas
     // PASO 2: Elegir cartas
     // PASO 3 Validar Carta
     // PASO 4 :Poner carta ( demano jugador trash)
 
-
+    // Modulo/Funcionalidad " camodin +4"
+//}
+function plusFour(card) {
+    const nextPlayer = (cPlayers + 1) % players;
+    if(card.number == "+4", card.type == "comodin"){
+        for(var moreFour = 0; moreFour < 4; moreFour++){
+    cardsPlayers["player" + nextPlayer].push(deck.shift());
+      }
+    }
 }
+plusFour({number: "+4", type: "comodin"});
+console.log(cardsPlayers);
