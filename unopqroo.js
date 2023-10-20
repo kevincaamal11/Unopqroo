@@ -44,11 +44,11 @@ var cardsPlayers ={};
 
 for(var cTCards = 0; cTCards < 7; cTCards++){
     for(var cPlayers = 0; cPlayers < players;cPlayers++){
-        if(!cardsPlayers["player"+cPlayers]){
-        cardsPlayers["player"+cPlayers] = [];
+        if(!cardsPlayers["player_"+cPlayers]){
+        cardsPlayers["player_"+cPlayers] = [];
         }
       // console.log("players:", cPlayers);
-        cardsPlayers["player"+cPlayers].push(deck.shift());
+        cardsPlayers["player_"+cPlayers].push(deck.shift());
        //console.log(cardsPlayers)
     }
 }
@@ -78,13 +78,8 @@ function cardValidation(card) {
 
     // Modulo/Funcionalidad " camodin +4"
 //}
-function plusFour(card) {
-    const nextPlayer = (cPlayers + 1) % players;
-    if(card.number == "+4", card.type == "comodin"){
-        for(var moreFour = 0; moreFour < 4; moreFour++){
-    cardsPlayers["player" + nextPlayer].push(deck.shift());
-      }
-    }
+for (var MoreFour = 0; MoreFour < 4; MoreFour++) {
+    cardsPlayers["player_1"].push(deck.shift());
 }
-plusFour({number: "+4", type: "comodin"});
-console.log(cardsPlayers);
+console.log("jugador actual", cardsPlayers["player_0"]);
+console.log("siguiente jugador", cardsPlayers["player_1"]);
